@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        background-color:black;
+        color:aliceblue;
+    }
+
+    .container{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20vh;
+    }
+
+    h1{
+        color:red;
+        display: flex;
+        align-content: center;
+        justify-content:center;
+    }
+    h1{
+        margin-top:30px;
+    }
+</style>
+<body>
+    <h1 >Spending Tracker</h1>
+    <div class="container">
+        <form action="/handelHomePage" th:action="@{/handelHomePage}" th:object="${spending}">
+                Item Name:<input type="text" required th:field=*{name}> <br>
+                Item Desc:<input type="text" required th:field=*{description}> <br>
+                Item Category:<input type="text" required th:field=*{category}>  <br>
+                Item taken date:<input type="date" required th:field=*{date}> <br>
+                Item Amount:<input type="number" required th:field=*{amount}> <br>
+                <button type="submit">Submit</button>
+            </form>
+    </div>
+    <h1><a href="/showAll">ShowALLDataSpendings</a></h1>
+    
+</body>
+</html>

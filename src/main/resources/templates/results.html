@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>data will Appera here</h1>
+    <table border="1" cellspacing="0.5px">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Amount</th>
+        </tr>
+        <tr th:each="data:${allData}">
+            <td th:text="${data.name}"></td>
+            <td th:text="${data.description}"></td>
+            <td th:text="${data.amount}"></td>
+
+        </tr>
+    </table>
+</body>
+</html>
